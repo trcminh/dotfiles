@@ -1,0 +1,3 @@
+pkill eww
+eww daemon
+kitty -e nmtui

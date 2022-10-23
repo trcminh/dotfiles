@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+STATUS=$(pamixer --get-mute)
+toggle() {
+    if [ $STATUS == "false" ]; then
+        pamixer -t
+    else
+        pamixer -t
+    fi
+}
+
+class() {
+    if [ $STATUS == "false" ]; then
+        echo inactive
+    else
+        echo active
+    fi
+}
+
+if [[ $1 == "--toggle" ]]; then
+    toggle
+elif [[ $1 == "--class" ]]; then
+    class
+fi

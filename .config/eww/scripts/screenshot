@@ -1,0 +1,6 @@
+pkill eww
+eww daemon 
+
+sleep 1s
+
+rofi-screenshot

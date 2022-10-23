@@ -1,0 +1,56 @@
+# zoom and scroll step size
+set zoom-step 20
+set scroll-step 80
+
+# copy selection to system clipboard
+set selection-clipboard clipboard
+
+# enable incremental search
+set incremental-search true
+
+set sandbox none
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set window-title-basename "true"
+set recolor true
+map i recolor
+
+
+# LAYOUT SETTINGS
+# ---------------
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set show-scrollbars     true
+
+# 4CHAN DARK
+# ----------
+set recolor 			true
+set recolor-lightcolor		"#19191e"
+set recolor-darkcolor		"#e5e9f0"
+set statusbar-bg		"#19191e"
+set statusbar-fg		"#e5e9f0"
+set default-bg			"#19191e"
+set default-fg			"#e5e9f0"
+set inputbar-bg			"#19191e"
+set inputbar-fg			"#e5e9f0"
+set completion-bg		"#19191e"
+set completion-fg		"#e5e9f0"
+set completion-highlight-bg	"#e5e9f0"
+set completion-highlight-fg	"#19191e"
+set completion-group-bg		"#19191e"
+set completion-group-fg		"#e5e9f0"
+set adjust-open			"best-fit"
+set page-padding		0
+
+set highlight-color		"#d8dee9"
+set highlight-active-color	"#5e81ac"
+set notification-bg		"#2e3440"
+set notification-fg		"#d8dee9"
+set notification-error-bg	"#2e3440"
+set notification-error-fg	"#bf616a"
+set notification-warning-bg	"#2e3440"
+set notification-warning-fg	"#ebcb8b"
+
+# setting recolor-keep true will keep any color your pdf has.
+# if it is false, it'll just be black and white
+set recolor-keephue             "true"

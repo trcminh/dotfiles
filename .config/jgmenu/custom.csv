@@ -1,0 +1,27 @@
+Redshift,^checkout(redshift)
+^sep()
+
+Terminal,kitty,utilities-terminal
+Neovim,kitty -e nvim,nvim
+Nemo,nemo
+^sep()
+
+Lock,betterlockscreen -l && betterlockscreen -u ./Pictures/lockscreen  
+Restart,^checkout(restart)
+Exit,^checkout(exit)
+
+
+^tag(exit)
+Logout,bspc quit
+Reboot,loginctl reboot
+Poweroff,loginctl poweroff
+
+^tag(redshift)
+On,redshift
+Off,pkill redshift
+
+^tag(restart)
+BSPWM,bspc wm -r 
+Polybar,poly-reset
+SXHKD,keeb-reset,input-keyboard
+Eww,pkill eww

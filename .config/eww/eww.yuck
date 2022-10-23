@@ -1,0 +1,108 @@
+(defpoll brightness_percent :interval "5s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defpoll volume :interval "1s" "pamixer --get-volume")
+(defpoll mic :interval "5s" "amixer sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll SONG :interval "1s" `scripts/music_info --song`)
+(defpoll ARTIST :interval "1s" `scripts/music_info --artist`)
+(defpoll COVER :interval "1s" `scripts/music_info --cover`)
+(defpoll STATUS :interval "1s" `scripts/music_info --status`)
+(defpoll CTIME :interval "1s" `scripts/music_info --ctime`)
+(defpoll TTIME :interval "1s" `scripts/music_info --ttime`)
+
+(defwidget micscale[]
+    (box :orientation "h" :class "scale scalelast" :space-evenly "false"
+        (label :class "scaleicon mic" :text "")
+        (scale :class "micbar"
+                :value mic
+                :max 100
+                :min 1
+                :onchange "amixer set Capture {}%"))
+)
+
+(defwidget volscale[]
+    (box :orientation "h" :space-evenly "false" :class "scale scalelast"
+        (label :class "scaleicon voli" :text "")
+        (scale :class "volbar"
+               :min 1
+                :max 101
+                :value volume
+                :onchange "~/.local/bin/roundvolume {}%"))
+)
+
+(defwidget brightscale[]
+    (box :orientation "h" :space-evenly "false" :class "scale scalelast"
+        (label :class "scaleicon brighti" :text "")
+        (scale :class "brightbar"
+        :value brightness_percent
+        :orientation "h"
+        :max 100
+        :min 0
+        :onchange "brightnessctl set {}%" )))
+
+
+(defwidget settings[] 
+    (box :orientation "v" :space-evenly "false"
+        (micscale)
+        (volscale)
+        (brightscale)))
+
+
+(defwidget sysmenu[] 
+    (box :orientation "v" :class "sysmenu"
+    (settings)))
+
+
+;; music
+(defwidget music [] 
+	(box :class "dockbox" 
+		(box :orientation "h" :space-evenly "false" :spacing 0 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "true"
+			(box :class "album_art"  :style "background-image: url('${COVER}');")
+			(box :class "musicbox" :orientation "v" :spacing 0 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false"
+				(label :class "song" :halign "start" :wrap "false" :limit-width 15 :text SONG)
+				(label :class "artist" :halign "start" :wrap "false" :limit-width 15 :text ARTIST)))
+        (box :class "musictime" :orientation "v" :spacing 0 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false"
+            (label :class "ctime" :halign "start" :wrap "false" :limit-width 5 :text CTIME)
+            (label :class "ttime" :halign "start" :wrap "false" :limit-width 5 :text TTIME))
+		(box :class "musicbuttons" :orientation "h" :spacing 10 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "true"
+				(button :class "trackbutton" :onclick "scripts/music_info --prev" "玲")
+				(button :class "playbutton" :onclick "scripts/music_info --toggle" STATUS)
+				(button :class "trackbutton" :onclick "scripts/music_info --next" "怜"))))
+
+(defwidget ms []
+    (box :orientation "v" :space-evenly "false"
+    (music)))
+
+;; Calendar Widgets ;;
+(defwidget cal []
+	(box :class "cal-box" :space-evenly "false"
+		 :orientation "v"
+	(box :class "cal-inner-box" :space-evenly "false"
+	(calendar :class "cal" ))))
+
+(defwindow mpd
+    :monitor 0
+    :geometry ( geometry :x "63%"
+                         :y "25%")
+    :stacking "fg"
+    :wm-ignore true
+
+    (ms))
+
+(defwindow calendar
+    :monitor 0
+    :geometry ( geometry :x "1%"
+                         :y "4%")
+    :stacking "fg"
+    :wm-ignore true
+
+    (cal))
+
+(defwindow sysmenu
+    :monitor 0
+    :geometry ( geometry :x "63%"
+                         :y "4%")
+    :stacking "fg"
+    :wm-ignore false
+
+    (sysmenu))
+
+

@@ -1,0 +1,201 @@
+$background : #151515;
+$foreground : #E8E3E3;
+$background-alt : #121b1c;
+$foreground-alt : #c5d7d7;
+
+$red : #B66467;
+$red-light : #f16269;
+
+$green : #6EC587;
+$green-light : #8dd5a0;
+
+$yellow : #D9BC8C;
+$yellow-light : #dbb476;
+
+$blue : #8DA3B9;
+$blue-light : #739bdf;
+
+$cyan : #5fd1d5;
+$cyan-light : #6bd3e0;
+
+$magenta : #c167d9;
+$magenta-light : #d16ee0;
+
+
+* {
+    all : unset;
+    font-family: "JetBrains Mono Nerd Font";
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+
+.sysmenu {
+    background-color: $background;
+    min-height: 11px;
+    min-width: 320px;
+    padding: .28rem .25rem;
+}
+
+
+.scale {
+    padding: .4rem;
+    margin-left: .3rem;
+}
+
+.scaleicon {
+    font-size: 2rem;
+    margin: .2rem 2rem;
+}
+
+.voli {
+    color: $blue;
+}
+
+.mic {
+    color: $green;
+}
+
+scale trough {
+    all: unset;
+    background-color: $background-alt;
+    border-radius: 16px;
+    min-height: 11px;
+    min-width: 320px;
+    margin: 0px 20px 0px 0px;
+}
+
+.micbar trough highlight {
+    background-image: linear-gradient(to right, $green-light, $cyan-light);
+    border-radius: 10px;
+}
+
+.volbar trough highlight {
+    background-image: linear-gradient(to right, $blue-light, $green-light);
+    border-radius: 10px;
+}
+
+.brightbar trough highlight {
+    background-image: linear-gradient(to right, $yellow-light, $red);
+    border-radius: 10px;
+}
+
+
+.title {
+    padding: 2rem;
+}
+
+.brighti {
+    color: $yellow;
+}
+
+.cal-inner-box {
+    padding: 1rem 1rem;
+    background-color: $background;
+
+}
+
+.cal-box {
+    background-color: $background;
+}
+
+calendar:selected {
+    color: $cyan;
+    background-color: $background;
+}
+
+.cal {
+    border: none;
+    padding: .38rem .35rem;
+}
+  
+calendar.header {
+  color: $cyan;
+  font-weight: bold;
+}
+  
+calendar.button {
+  color: $green;
+}
+  
+calendar.highlight {
+  color: $green;
+  font-weight: bold;
+}
+  
+calendar:indeterminate {
+  color: $background;
+}
+  
+.settings {
+    padding: .28rem .25rem;
+}
+
+/** Music *************************************************/
+.dockbox {
+	background-color: $background;
+	padding: .28rem .25rem;
+    min-width: 40pc;
+    margin: 0px -210px 0px 0px;
+}
+
+.album_art {
+    background-repeat: no-repeat;
+	background-size: 40px;
+	min-height: 40px;
+	min-width: 40px;
+	margin: 10px 10px 10px 15px;
+	border-radius: 8px;
+}
+
+.musicbox {
+	margin : 0px 0px 0px 5px;
+}
+
+.song {
+	font-size : 14px;
+	font-weight : bold;
+}
+
+.artist {
+	font-size : 12px;
+}
+
+.musictime {
+	margin : 0px 0px 0px 10px;
+}
+
+.ctime {
+	font-size : 10px;
+	font-weight : bold;
+}
+
+.ttime {
+	font-size : 10px;
+	font-weight : bold;
+}
+
+.musicbuttons {
+	margin : 0px 0px 0px -90px;
+	color: $foreground;
+	font-size: 26px;
+}
+
+.playbutton {
+    background-repeat: no-repeat;
+	background-size: 20px;
+	min-height: 24px;
+	min-width: 24px;
+	margin: 0px;
+	font-size: 26px;
+}
+
+.trackbutton {
+    background-repeat: no-repeat;
+	background-size: 18px;
+	min-height: 18px;
+	min-width: 18px;
+	margin: 0px 0px 0px 0px;
+	font-size: 26px;
+}

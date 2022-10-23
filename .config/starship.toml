@@ -1,0 +1,8 @@
+add_newline = false
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[battery]
+disabled = true
+
+[python]
+disabled = true

@@ -1,0 +1,96 @@
+! URXVT APPEARANCE
+URxvt.font:                       xft:JetBrainsMono nerd font mono:size=9
+URxvt.geometry:                   74x17
+URxvt.internalBorder:             10
+URxvt.cursorBlink:                true
+URxvt.cursorUnderline:            true
+URxvt.saveline:                   32768
+URxvt.scrollBar:                  false
+URxvt.scrollBar_right:            true
+URxvt.scrollBar_floating:         false
+URxvt.scrollstyle:                plain
+URxvt.urgentOnBell:               false
+URxvt.depth:                      32
+URxvt.iso14755:                   false
+! URxvt.letterSpace: -1
+
+! URXVT EXTENSIONS
+URxvt.perl-ext-common:            default,clipboard,keyboard-select,url-select,tabbedex
+URxvt.perl-lib: ./.urxvt/ext
+
+URxvt.tabbedex.no-tabbedex-keys:  yes
+URxvt.tabbedex.new-button:        false
+URXvt.tabbedex.reopen-on-close:   yes
+URxvt.tabbedex.autohide:          yes
+
+URxvt.tabbedex.tabbar-fg:         4
+URxvt.tabbedex.tabbar-bg:         0
+URxvt.tabbedex.tab-fg:            7
+URxvt.tabbedex.tab-bg:            0
+URxvt.tabbedex.bell-fg:           0
+URxvt.tabbedex.bell-bg:           0
+URxvt.tabbedex.bell-tab-fg:       0
+URxvt.tabbedex.bell-tab-bg:       0
+URxvt.tabbedex.title-fg:          7
+URxvt.tabbedex.title-bg:          0
+
+URxvt.keysym.Control-Shift-T:     perl:tabbedex:new_tab
+URxvt.keysym.Control-Shift-R:     perl:tabbedex:rename_tab
+URxvt.keysym.Control-Shift-W:     perl:tabbedex:kill_tab
+URxvt.keysym.Control-Next:        perl:tabbedex:next_tab
+URxvt.keysym.Control-Prior:       perl:tabbedex:prev_tab
+URxvt.keysym.Control-Shift-Next:  perl:tabbedex:move_tab_right
+URxvt.keysym.Control-Shift-Prior: perl:tabbedex:move_tab_left
+
+URxvt.clipboard.copycmd:          xclip -i -selection clipboard
+URxvt.clipboard.pastecmd:         xclip -o -selection clipboard
+URxvt.keysym.Control-Shift-C:                 perl:clipboard:copy
+URxvt.keysym.Control-Shift-V:                 perl:clipboard:paste
+URxvt.keysym.M-Escape:            perl:keyboard-select:activate
+URxvt.keysym.M-s:                 perl:keyboard-select:search
+
+URxvt.underlineURLs:              true
+URxvt.urlButton:                  1
+
+!COLOR SCHEME
+! special
+URxvt.foreground: #E8E3E3
+URxvt.background: #151515
+URxvt.url_color: #E8E3E3
+
+! black
+URxvt.color0: #151515
+URxvt.color8: #424242
+
+! red
+URxvt.color1: #B66467
+URxvt.color9: #B66467
+
+! green
+URxvt.color2: #8C977D
+URxvt.color10: #8C977D
+
+! yellow
+URxvt.color3: #D9BC8C
+URxvt.color11: #D9BC8C
+
+! blue
+URxvt.color4: #8DA3B9
+URxvt.color12: #8DA3B9
+
+! magenta
+URxvt.color5: #A988B0
+URxvt.color13: #A988B0
+
+! cyan
+URxvt.color6: #8AA6A2
+URxvt.color14: #8AA6A2
+
+! white
+URxvt.color7: #E8E3E3
+URxvt.color15: #E8E3E3
+
+
+
+
+

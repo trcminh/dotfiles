@@ -1,0 +1,22 @@
+#!/usr/bin/sh
+toggle(){
+    if [[ ! `pidof gamemoded` ]]; then
+        gamemoded &
+    else 
+        pkill -9 gamemoded
+    fi
+}
+
+class(){
+    if [[ ! `pidof gamemoded` ]]; then
+        echo inactive
+    else 
+        echo active
+    fi
+}
+
+if [[ $1 == "--toggle" ]]; then
+    toggle
+elif [[ $1 == "--class" ]]; then
+    class
+fi
